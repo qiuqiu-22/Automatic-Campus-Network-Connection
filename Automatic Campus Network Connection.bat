@@ -20,7 +20,7 @@ if %errorlevel%==0 (
     echo 互联网连接正常 可以上网
     echo.
     echo 脚本将自动退出...
-    timeout /t 2 >nul
+    timeout /t 3 >nul
     exit /b 0
 ) else (
     echo 无法访问互联网
@@ -68,5 +68,5 @@ if %errorlevel%==0 (
 )
 
 :: 自动退出，不需要pause
-timeout /t 2 >nul
+timeout /t 3 >nul
 exit

@@ -54,16 +54,16 @@ echo 文件复制完成
 
 
 :: ========== 第四步：创建桌面快捷方式 ==========
-echo.
-echo 正在创建桌面快捷方式...
+::echo.
+::echo 正在创建桌面快捷方式...
 
 :: 获取桌面路径
-for /f "tokens=2,*" %%i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v "Desktop" 2^>nul') do set DESKTOP=%%j
-if "%DESKTOP%"=="" set DESKTOP=%USERPROFILE%\Desktop
-echo 桌面文件夹: %DESKTOP%
+::for /f "tokens=2,*" %%i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v "Desktop" 2^>nul') do set DESKTOP=%%j
+::if "%DESKTOP%"=="" set DESKTOP=%USERPROFILE%\Desktop
+::echo 桌面文件夹: %DESKTOP%
 :: 使用PowerShell创建快捷方式
-powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%DESKTOP%\Automatic Campus Network Connection.lnk'); $s.TargetPath = '%INSTALL_DIR%\Automatic Campus Network Connection.bat'; $s.WorkingDirectory = '%INSTALL_DIR%'; $s.Description = '河海大学校园网自动登录工具'; $s.Save()" >nul
-echo ✅ 桌面快捷方式创建成功
+::powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%DESKTOP%\Automatic Campus Network Connection.lnk'); $s.TargetPath = '%INSTALL_DIR%\Automatic Campus Network Connection.bat'; $s.WorkingDirectory = '%INSTALL_DIR%'; $s.Description = '河海大学校园网自动登录工具'; $s.Save()" >nul
+::echo ✅ 桌面快捷方式创建成功
 
 
 
